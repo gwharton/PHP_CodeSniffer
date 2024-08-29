@@ -462,6 +462,7 @@ class File
 
                         $pattern = '`'.$pattern.'`i';
                         if (preg_match($pattern, $this->path) === 1) {
+                            echo "GWDEBUG : Ignored " . $this->path . " because of pattern " . $pattern . "\n";
                             $this->ignoredListeners[$class] = true;
                             continue(2);
                         }
@@ -482,6 +483,7 @@ class File
 
                             $pattern = '`'.$pattern.'`i';
                             if (preg_match($pattern, $this->path) === 1) {
+                                echo "GWDEBUG : Included " . $this->path . " because of pattern " . $pattern . "\n";
                                 $included = true;
                                 break;
                             }
